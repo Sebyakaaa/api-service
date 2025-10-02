@@ -2,7 +2,7 @@
   "name": "api-service",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Sebyakaaa/api-service",
+  "homepage": "https://Sebyakaaa.github.io/api-service",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
