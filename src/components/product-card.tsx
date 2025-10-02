@@ -32,32 +32,32 @@ const ProductCard = () => {
     }
 
     const handleUpdateClick = async () => {
-        try {
-            const id = parseInt(productId);
-            const price = parseFloat(productPrice);
-            const result = await updateProductPromise(id, productTitle, price);
+        const id = parseInt(productId);
+        const price = parseFloat(productPrice);
+        const result = await updateProductPromise(id, productTitle, price);
+
+        if (result.error) {
+            alert(result.error);
+        } else {
             alert(`Product ${id} updated`);
             console.log(result);
-        } catch (error) {
-            alert(`${error}`);
-        } finally {
-            setProductId('')
-            setProductTitle('');
-            setProductPrice('');
         }
+        setProductId('')
+        setProductTitle('');
+        setProductPrice('');
     }
 
     const handleDeleteClick = async () => {
-        try {
-            const id = parseInt(productId);
-            const result = await deleteProductPromise(id);
+        const id = parseInt(productId);
+        const result = await deleteProductPromise(id);
+
+        if (result.error) {
+            alert(result.error);
+        } else {
             alert(`Product ${id} deleted`);
             console.log(result);
-        } catch (error) {
-            alert(`${error}`);
-        } finally {
-            setProductId('')
         }
+        setProductId('');
     }
 
     const handleReset = () => {

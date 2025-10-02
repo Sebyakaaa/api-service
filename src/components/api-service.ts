@@ -1,5 +1,3 @@
-import { error } from "console";
-
 class ApiService {
     base_url: string;
     constructor(base_url = 'https://fakestoreapi.com') {
@@ -59,12 +57,12 @@ class ApiService {
         })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error;
+                    return { error: "Wrong Product id" };
                 }
                 return response.json();
             })
             .catch(error => {
-                throw new Error("Wrong Product id");
+                return { error: "Wrong Product id" };
             });
     }
 
@@ -75,12 +73,12 @@ class ApiService {
         })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error;
+                    return { error: "Wrong Product id" };
                 }
                 return response.json();
             })
-            .catch(error => {
-                throw new Error("Wrong Product id");
+            .catch(() => {
+                return { error: "Wrong Product id" };
             });
     }
 }
