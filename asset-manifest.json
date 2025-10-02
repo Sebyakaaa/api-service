@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Sebyakaaa/api-service/static/css/main.3a533a11.css",
-    "main.js": "/Sebyakaaa/api-service/static/js/main.68d1fb24.js",
-    "static/js/453.ad47f86c.chunk.js": "/Sebyakaaa/api-service/static/js/453.ad47f86c.chunk.js",
-    "index.html": "/Sebyakaaa/api-service/index.html",
-    "main.3a533a11.css.map": "/Sebyakaaa/api-service/static/css/main.3a533a11.css.map",
-    "main.68d1fb24.js.map": "/Sebyakaaa/api-service/static/js/main.68d1fb24.js.map",
-    "453.ad47f86c.chunk.js.map": "/Sebyakaaa/api-service/static/js/453.ad47f86c.chunk.js.map"
+    "main.css": "/api-service/static/css/main.3a533a11.css",
+    "main.js": "/api-service/static/js/main.12c8cb6a.js",
+    "static/js/453.ad47f86c.chunk.js": "/api-service/static/js/453.ad47f86c.chunk.js",
+    "index.html": "/api-service/index.html",
+    "main.3a533a11.css.map": "/api-service/static/css/main.3a533a11.css.map",
+    "main.12c8cb6a.js.map": "/api-service/static/js/main.12c8cb6a.js.map",
+    "453.ad47f86c.chunk.js.map": "/api-service/static/js/453.ad47f86c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3a533a11.css",
-    "static/js/main.68d1fb24.js"
+    "static/js/main.12c8cb6a.js"
   ]
 }
