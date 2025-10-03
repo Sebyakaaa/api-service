@@ -1,0 +1,1 @@
+export type CategoryDTO = `men's clothing` | 'jewelery' | 'electronics' | `women's clothing`;
