@@ -34,19 +34,19 @@ export class ApiService2 {
     }
   }
 
-  async get<T>(endpoint: string, options?: Record<string, string>): Promise<T> {
+  async get<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
     return this.request<T>(endpoint, options);
   }
 
-  async post<T>(endpoint: string, options?: Record<string, string>): Promise<T> {
-    return this.request<T>(endpoint, { method: 'POST', ...options });
+  async post<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+    return this.request<T>(endpoint, { method: 'POST' });
   }
 
-  async put<T>(endpoint: string, options?: Record<string, string>): Promise<T> {
+  async put<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
     return this.request<T>(endpoint, { method: 'PUT', ...options });
   }
 
-  async delete<T>(endpoint: string, options?: Record<string, string>): Promise<T> {
+  async delete<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
     return this.request<T>(endpoint, { method: 'DELETE' });
   }
 }
