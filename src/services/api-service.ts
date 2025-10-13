@@ -6,19 +6,20 @@ export class ApiService2 {
     this.baseUrl = baseUrl;
     this.defaultHeaders = {
       'Content-Type': 'application/json',
+      'Cache-Control': 'no-cache',
       ...defaultHeaders
     };
   }
 
-  private async request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+  async request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
     const url = `${this.baseUrl}/${endpoint}`;
 
     const config: RequestInit = {
+      ...options,
       headers: {
         ...this.defaultHeaders,
         ...options.headers,
       },
-      ...options,
     };
 
     try {
@@ -28,26 +29,16 @@ export class ApiService2 {
         throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
       }
 
-      return await response.json();
+      const text = await response.text();
+
+      if (!text) {
+        throw new Error('Empty response from server');
+      }
+
+      return JSON.parse(text) as T;
     } catch (error) {
       throw error;
     }
-  }
-
-  async get<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
-    return this.request<T>(endpoint, options);
-  }
-
-  async post<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
-    return this.request<T>(endpoint, { method: 'POST' });
-  }
-
-  async put<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
-    return this.request<T>(endpoint, { method: 'PUT', ...options });
-  }
-
-  async delete<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
-    return this.request<T>(endpoint, { method: 'DELETE' });
   }
 }
 
