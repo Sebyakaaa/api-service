@@ -1,3 +1,5 @@
+import { HttpMethod } from "../types/httpMethod";
+
 export class ApiService2 {
   private readonly baseUrl: string;
   private readonly defaultHeaders: Record<string, string>;
@@ -39,6 +41,21 @@ export class ApiService2 {
     } catch (error) {
       throw error;
     }
+  }
+  async get<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+    return this.request<T>(endpoint, { method: HttpMethod.GET, ...options });
+  }
+
+  async post<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+    return this.request<T>(endpoint, { method: HttpMethod.POST, ...options });
+  }
+
+  async put<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+    return this.request<T>(endpoint, { method: HttpMethod.PUT, ...options });
+  }
+
+  async delete<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+    return this.request<T>(endpoint, { method: HttpMethod.DELETE, ...options });
   }
 }
 
